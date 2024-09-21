@@ -1,0 +1,73 @@
+/* Centering the loader and setting height to 80% */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    /* 80% of the viewport height */
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    height: 20px;
+    position: relative;
+}
+
+.loader-circle {
+    width: 14px;
+    height: 14px;
+    background-color: #00AAA9;
+    border-radius: 50%;
+    animation: bounce 0.6s ease-in-out infinite alternate;
+}
+
+.loader-circle:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader-circle:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.loader-shadow {
+    width: 14px;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    animation: shrink 0.6s ease-in-out infinite alternate;
+}
+
+.loader-shadow:nth-child(5) {
+    left: 25px;
+    animation-delay: 0.2s;
+}
+
+.loader-shadow:nth-child(6) {
+    left: 50px;
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(0.7);
+    }
+}

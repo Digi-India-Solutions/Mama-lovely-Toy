@@ -1,0 +1,8 @@
+.banners img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.banners img:hover {
+    transform: translateY(-6px); 
+    box-shadow: 0 5px 5px rgba(169, 166, 166, 0.263); 
+}
