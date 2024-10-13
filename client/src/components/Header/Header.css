@@ -213,6 +213,9 @@ header .hamburger {
     .header {
         padding: 10px 8px;
     }
+    .user-actions a {
+        margin-right: 0rem;
+    } 
 }
 
 
