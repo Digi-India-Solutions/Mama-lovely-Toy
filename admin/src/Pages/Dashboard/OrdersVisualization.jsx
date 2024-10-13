@@ -136,7 +136,7 @@ const OrdersVisualization = () => {
                     <div className="row g-5">
                         <div className="col-md-6">
                             <h2>Orders by Payment Method</h2>
-                            <PieChart width={400} height={400}>
+                            <PieChart style={{width:"100%"}} height={400}>
                                 <Pie
                                     data={paymentMethodData()}
                                     cx={200}
