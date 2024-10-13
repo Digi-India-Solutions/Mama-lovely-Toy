@@ -106,12 +106,12 @@ const Header = () => {
                 {/* <Link className="cart-icon" to={`/cart`} onClick={handleCartClick}> */}
                 <Link className="cart-icon" to={`/cart`} >
                   {/* <i className="fas fa-shopping-cart"></i> */}
-                  <img src={cartIcon} alt="Cart-Icon" height={24} />
+                  <img src={cartIcon} alt="Cart-Icon" height={24} style={{objectFit : "contain" ,width : "auto" }} />
                   {cartNumber > 0 && <span className="cart-number">{cartNumber}</span>}
                 </Link>
                 <button className='hamburger' onClick={handleOpenClick}>
                   {/* <i className="fas fa-bars"></i> */}
-                  <img src={menuIcon} alt="Cart-Icon" height={24} />
+                  <img src={menuIcon} alt="Cart-Icon" height={24} style={{objectFit : "contain" ,width : "auto" }} />
                 </button>
               </div>
               {user ? (

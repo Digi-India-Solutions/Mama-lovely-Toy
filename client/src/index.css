@@ -488,6 +488,21 @@ img {
     font-weight: 600;
 }
 
+@media only screen and (max-width: 900px){
+    .subcategory-list{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media only screen and (max-width: 500px){
+    .subcategory-list{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .subcategory-list .single-subcategory img {
+        height: 180px;
+        object-fit: contain;
+    }
+}
+
 
 /* ======== Policy Page ======  */
 
