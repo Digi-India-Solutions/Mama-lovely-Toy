@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import logo from '../../Assets/logo.PNG';
+import logo from '../../Assets/logo.png';
 import CartSidebar from '../CartSidebar/CartSidebar';
 import { getCartTotalItems } from '../../pages/CartPage/cartUtils';
 import userImage from './user-person.svg'
