@@ -52,14 +52,16 @@ const AllSubCategory = () => {
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
+
     // Pagination calculation
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentItems = SubCategories.slice(indexOfFirstItem, indexOfLastItem);
 
-    if(!SubCategories){
-        return <Loading/>
+    if (!SubCategories) {
+        return <Loading />;
     }
+
     return (
         <>
             <ToastContainer />
@@ -90,10 +92,12 @@ const AllSubCategory = () => {
                             <tr key={subcategory._id}>
                                 <th scope="row">{index + 1 + indexOfFirstItem}</th>
                                 <td>{subcategory.name}</td>
-                                <td>{subcategory.category.name}</td>
-                                <td><img src={subcategory.subCategoryImage.url} alt={subcategory.name} /></td>
+                                <td>{subcategory.category ? subcategory.category.name : "N/A"}</td> {/* Null check here */}
+                                <td>
+                                    <img src={subcategory.subCategoryImage?.url || "placeholder-image-url"} alt={subcategory.name} />
+                                </td>
                                 <td>{subcategory.description || "N/A"}</td>
-                                <td><Link to={`/edit-subcategory/${subcategory._id}`} className="bt edit">Edit <i class="fa-solid fa-pen-to-square"></i></Link></td>
+                                <td><Link to={`/edit-subcategory/${subcategory._id}`} className="bt edit">Edit <i className="fa-solid fa-pen-to-square"></i></Link></td>
                                 <td>
                                     <button onClick={() => handleDeleteCategory(subcategory._id)} className="bt delete">Delete <i className="fa-solid fa-trash"></i></button>
                                 </td>
