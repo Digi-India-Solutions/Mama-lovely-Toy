@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
-import logo from '../../Assets/logo.png';
+import logo from '../../Assets/logo.PNG';
 import CartSidebar from '../CartSidebar/CartSidebar';
 import { getCartTotalItems } from '../../pages/CartPage/cartUtils';
 import userImage from './user-person.svg'
+import cartIcon from './cart-icon.png'
+import menuIcon from './menu-icon.png'
+
 
 const Header = () => {
   const [openCart, setOpenCart] = useState(false);
@@ -102,11 +105,13 @@ const Header = () => {
 
                 {/* <Link className="cart-icon" to={`/cart`} onClick={handleCartClick}> */}
                 <Link className="cart-icon" to={`/cart`} >
-                  <i className="fas fa-shopping-cart"></i>
+                  {/* <i className="fas fa-shopping-cart"></i> */}
+                  <img src={cartIcon} alt="Cart-Icon" height={24} />
                   {cartNumber > 0 && <span className="cart-number">{cartNumber}</span>}
                 </Link>
                 <button className='hamburger' onClick={handleOpenClick}>
-                  <i className="fas fa-bars"></i>
+                  {/* <i className="fas fa-bars"></i> */}
+                  <img src={menuIcon} alt="Cart-Icon" height={24} />
                 </button>
               </div>
               {user ? (

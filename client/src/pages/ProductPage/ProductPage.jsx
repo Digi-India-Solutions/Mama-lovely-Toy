@@ -76,8 +76,8 @@ const ProductPage = () => {
             setSelectedVariant({
                 color: updatedVariant.color.name || '',
                 size: updatedVariant.size.name || '',
-                price: updatedVariant.discountPrice,
-                mrp: updatedVariant.originalPrice,
+                price: updatedVariant.originalPrice,
+                mrp: updatedVariant.discountPrice,
                 dimension: updatedVariant.dimension || 'N/A',
                 weight: updatedVariant.weight || 'N/A'
             });
@@ -130,13 +130,13 @@ const ProductPage = () => {
             <section className="product-page">
                 <div className="container">
                     <div className="product-details">
-                        <div className="row">
-                            <div className="col-md-4 mb-3">
+                        <div className="row" style={{width: "100%"}}>
+                            <div className="col-lg-4 col-md-4 mb-3">
                                 <div className="product-photo">
                                     <img src={productDetails.productImage.url} alt={productDetails.name} />
                                 </div>
                             </div>
-                            <div className="col-md-8">
+                            <div className="col-lg-8 col-md-8">
                                 <div className="product-info">
                                     <h2>{productDetails.name}</h2>
                                     <p className="product-description">{productDetails.description}</p>
