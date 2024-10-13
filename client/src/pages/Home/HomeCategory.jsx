@@ -39,9 +39,9 @@ const HomeCategory = () => {
                             key={index}
                             style={{ backgroundImage: `url(${category.categoryImage.url})` }}
                         >
-                            <div className="content">
+                            {/* <div className="content">
                                 <h3>{category.name}</h3>
-                            </div>
+                            </div> */}
                         </Link>
                     ))}
                 </div>

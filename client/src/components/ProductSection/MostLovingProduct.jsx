@@ -45,8 +45,8 @@ const MostLovingProduct = () => {
                                 </div>
                                 <div className="product-desc">
                                     <div className="product-name">{product.name}</div>
-                                    <div className="acctual-price">₹{product.variants[0].originalPrice}</div>
-                                    <div className="off-price">₹{product.variants[0].discountPrice}</div>
+                                    <div className="acctual-price">₹{product.variants[0].discountPrice}</div>
+                                    <div className="off-price">₹{product.variants[0].originalPrice}</div>
                                 </div>
                             </Link>
                         ))}

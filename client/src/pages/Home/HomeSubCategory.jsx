@@ -25,10 +25,10 @@ const HomeSubCategory = () => {
     return (
         <section className='my-5 category'>
             <div className="container">
-                <div className="header-container">
+                {/* <div className="header-container">
                     <h2 className="header-title">Explore Our Diverse Options</h2>
                     <p className="header-subtitle">Discover a variety of options tailored just for you</p>
-                </div>
+                </div> */}
 
                 <div className="swiper-container">
                     <Swiper
@@ -49,16 +49,18 @@ const HomeSubCategory = () => {
                             1440: { slidesPerView: 4 },
                         }}
                     >
-                        {subCategories.map((subCategory) => (
+                        {subCategories && subCategories.map((subCategory) => (
                             <SwiperSlide key={subCategory._id}>
                                 <Link
-                                    to={`/our-products/${subCategory.category.name.replace(/\s+/g, '-')}/${subCategory.name.replace(/\s+/g, '-')}`}
+                                    to={subCategory.category && subCategory.category.name
+                                        ? `/our-products/${subCategory.category.name.replace(/\s+/g, '-')}/${subCategory.name.replace(/\s+/g, '-')}`
+                                        : '#'}
                                     className="single-category"
                                     style={{ backgroundImage: `url(${subCategory.subCategoryImage.url})` }}
                                 >
-                                    <div className="content">
+                                    {/* <div className="content">
                                         <h3>{subCategory.name}</h3>
-                                    </div>
+                                    </div> */}
                                 </Link>
                             </SwiperSlide>
                         ))}
