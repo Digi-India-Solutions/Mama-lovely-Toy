@@ -185,7 +185,7 @@ header .hamburger {
     header .header-content .navbar {
         display: none;
     }
-
+    
     header .hamburger {
         display: block;
         font-size: 1.4rem;
@@ -193,7 +193,10 @@ header .hamburger {
         border: none;
         cursor: pointer;
     }
-
+    
+    header .mobile-none{
+        display: none;
+    }
     header .header-right {
         flex-direction: row-reverse;
     }

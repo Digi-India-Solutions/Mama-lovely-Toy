@@ -73,6 +73,13 @@ const Header = () => {
       <header className="header">
         <div className="container">
           <div className="header-content">
+            
+              <button className='hamburger' onClick={handleOpenClick}>
+                {/* <i className="fas fa-bars"></i> */}
+                <img src={menuIcon} alt="Cart-Icon" height={24} style={{ objectFit: "contain", width: "auto" }} />
+              </button>
+            
+
             <div className="logo">
               <Link to="/">
                 <img src={logo} alt="MAMA Luvmee" />
@@ -106,12 +113,12 @@ const Header = () => {
                 {/* <Link className="cart-icon" to={`/cart`} onClick={handleCartClick}> */}
                 <Link className="cart-icon" to={`/cart`} >
                   {/* <i className="fas fa-shopping-cart"></i> */}
-                  <img src={cartIcon} alt="Cart-Icon" height={24} style={{objectFit : "contain" ,width : "auto" }} />
+                  <img src={cartIcon} alt="Cart-Icon" height={24} style={{ objectFit: "contain", width: "auto" }} />
                   {cartNumber > 0 && <span className="cart-number">{cartNumber}</span>}
                 </Link>
-                <button className='hamburger' onClick={handleOpenClick}>
+                <button className='hamburger mobile-none' onClick={handleOpenClick}>
                   {/* <i className="fas fa-bars"></i> */}
-                  <img src={menuIcon} alt="Cart-Icon" height={24} style={{objectFit : "contain" ,width : "auto" }} />
+                  <img src={menuIcon} alt="Cart-Icon" height={24} style={{ objectFit: "contain", width: "auto" }} />
                 </button>
               </div>
               {user ? (
@@ -152,7 +159,7 @@ const Header = () => {
             </div>
           ) : (
             <div className="float-right">
-              <img src={logo} alt="Logo" style={{width:"80px"}} />
+              <img src={logo} alt="Logo" style={{ width: "80px" }} />
             </div>
           )}
         </div>
@@ -164,14 +171,14 @@ const Header = () => {
             <li><Link onClick={handleOpenClick} to="/support"><i className="fas fa-headset"></i> Support</Link></li>
             {user ? (
               <li>
-                <Link 
+                <Link
                   onClick={() => {
                     // Logic to handle logout
                     localStorage.removeItem('mamaLovelyToyUser');
                     localStorage.removeItem('mamaLovelyToyToken');
                     localStorage.removeItem('cart');
                     setUser(null);
-                  }} 
+                  }}
                 ><i className="fas fa-sign-out-alt"></i> Logout</Link>
               </li>
             ) : null}
